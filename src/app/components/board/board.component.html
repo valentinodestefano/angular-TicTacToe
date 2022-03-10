@@ -1,8 +1,12 @@
 <div class="info">
 
-<h1 *ngIf="player == 'X'" style="color: rgb(141, 8, 153);">Current Player: {{ player }}</h1>
+    <h1 *ngIf="player == 'X'" style="color: rgb(141, 8, 153);">Current Player</h1>
+<h1 *ngIf="player == 'X'" style="color: rgb(141, 8, 153);">{{ host }} (X)</h1>
 
-<h1 *ngIf="player == 'O'" style="color: rgb(199, 113, 0);">Current Player: {{ player }}</h1>
+
+<h1 *ngIf="player == 'O'" style="color: rgb(199, 113, 0);">Current Player</h1>
+<h1 *ngIf="player == 'O'" style="color: rgb(199, 113, 0);">Invitado (O)</h1>
+
 
 
 <button (click)="newGame()">Start New Game</button>

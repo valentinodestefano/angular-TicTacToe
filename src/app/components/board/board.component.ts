@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-board',
@@ -10,17 +11,26 @@ export class BoardComponent implements OnInit {
   squares: any[];
   xIsNext: boolean;
   winner: string;
+  host: string;
+  contador: number;
 
-  constructor() { }
+  constructor(private rutaActiva: ActivatedRoute) { }
 
   ngOnInit() {
     this.newGame();
+    this.rutaActiva.params.subscribe(
+      (params: Params) => {
+        this.host = params.jugador;
+      }
+    );
+    console.log(this.host);
   }
 
   newGame() {
     this.squares = Array(9).fill(null);
     this.winner = null;
     this.xIsNext = true;
+    this.contador = 0;
   }
 
   get player() {
@@ -28,11 +38,16 @@ export class BoardComponent implements OnInit {
   }
 
   makeMove(idx: number){
+    this.contador++;
     if (!this.squares[idx]) {
       this.squares.splice(idx, 1, this.player);
       this.xIsNext = !this.xIsNext;
     }
   this.winner = this.calculateWinner();
+  if(this.winner == null && this.contador == 9){
+    this.winner = "Gano la vieja";
+  }
+  console.log(this.winner);
   }
 
   calculateWinner() {

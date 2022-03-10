@@ -1,0 +1,7 @@
+<div>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+      <label for="fname">Welcome! Please enter your username</label>
+      <input type="text" ngModel id="fname" name="username" placeholder="Your name...">
+      <input type="submit" value="Submit">
+    </form>
+  </div>

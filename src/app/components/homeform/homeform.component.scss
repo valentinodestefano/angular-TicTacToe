@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Satisfy', cursive;
+    font-size: medium;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    font-family: 'Satisfy', cursive;
+    background-color: #002a9c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 20px;
+    font-size: medium;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  div {
+    font-family: 'Satisfy', cursive;
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-top: 30px;
+    margin-right: 20%;
+    margin-left: 20%;
+  }
